@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js" integrity="sha384-dM3QQsP+wXdHg42wTqW85BjZQdLNNIXqlPw/BgKoExPmTG7ZLML4EGqLMfqHT6ON" crossorigin="anonymous"></script>
+
+<div class="home">
+    <div class="left">
+        <h1>Stock Graph Searcher</h1>
+        <p>This Website is powered Yahoo!!</p>
+        <h1>{{  msg  }}</h1>
+        <form action="/stock" method="POST">
+        <input type="Text" name="symbol" id="symbol" placeholder = "Symbol ex:AAPL">
+        <br><br>
+        <input type="date" name="Date1" id="Date1">
+        <br><br>
+        <input type="date" name="Date2" id="Date2">
+        <br><br>
+        <button type="submit">Get</button>
+        </form>
+    </div>
+    
+    <div class="right">
+        <p>Data for the stock</p>
+    </div>
+</div>
+
+{{script | safe}}
+{{div | safe}}
+{% endblock %}
+ 
